@@ -238,7 +238,22 @@ footer{
   </table>
 </div>
 </section>
-
+<section id="scorers" class="hidden">
+  <h2>🥇 Gol Krallığı</h2>
+  <div class="table-box">
+    <table style="width:100%;min-width:0">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Oyuncu</th>
+          <th>Takım</th>
+          <th>Gol</th>
+        </tr>
+      </thead>
+      <tbody id="scorersList"></tbody>
+    </table>
+  </div>
+</section>
 </main>
 
 <footer>Papara Süper Lig © 2026</footer>
@@ -607,7 +622,9 @@ function page(id,button){
    ========================= */
 const scorerResults = [
 ["Victor Osimhen", "Mardin 1969", 0],
-];
+  ["Andriy Shevchenko", "Kütahyaspor", 0],
+  ];
+
 
 const dailyResults = [
 
