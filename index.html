@@ -144,6 +144,54 @@ footer{
  .team{font-size:12px}
   .match{grid-template-columns:1fr 65px 1fr}
 }
+  
+#scorersList {
+  margin-top: 24px;
+  border-top: 2px solid #34445f;
+}
+
+.scorer-row {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid #263650;
+}
+
+.scorer-rank {
+  background: #293a56;
+  border-radius: 12px;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.scorer-row:first-child .scorer-rank {
+  background: #896b18;
+}
+
+.scorer-name {
+  font-size: 19px;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+.scorer-team {
+  margin-top: 5px;
+  color: #aebbd0;
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.scorer-goals {
+  color: #ffd43b;
+  font-size: 23px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
 </style>
 </head>
 
@@ -238,22 +286,13 @@ footer{
   </table>
 </div>
 </section>
+
 <section id="scorers" class="hidden">
-  <h2>🥇 Gol Krallığı</h2>
-  <div class="table-box">
-    <table style="width:100%;min-width:0">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Oyuncu</th>
-          <th>Takım</th>
-          <th>Gol</th>
-        </tr>
-      </thead>
-      <tbody id="scorersList"></tbody>
-    </table>
-  </div>
+  <h2>🏆 Gol Krallığı</h2>
+  <p style="color:#aebbd0">2026-2027 Muammer Erbaş Sezonu</p>
+  <div id="scorersList"></div>
 </section>
+
 </main>
 
 <footer>Papara Süper Lig © 2026</footer>
@@ -713,13 +752,15 @@ renderTeams();
 
   document.getElementById("scorersList").innerHTML =
     sorted.map((p, i) => `
-      <tr>
-        <td>${i + 1}</td>
-        <td>${p.name}</td>
-        <td>${p.team}</td>
-        <td class="points">${p.goals}</td>
-      </tr>
-    `).join("");
+  <div class="scorer-row">
+    <div class="scorer-rank">${i + 1}</div>
+    <div>
+      <div class="scorer-name">${p.name}</div>
+      <div class="scorer-team">${p.team}</div>
+    </div>
+    <div class="scorer-goals">${p.goals} gol</div>
+  </div>
+`).join("");
 }
 
 renderScorers();
