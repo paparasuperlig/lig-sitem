@@ -675,6 +675,34 @@ renderFixtures();
 renderTable();
 renderResults();
 renderTeams();
+  function renderScorers() {
+  const totals = {};
+
+  scorerResults.forEach(([name, team, goals]) => {
+    const key = name.trim().toLowerCase() + "|" + team;
+
+    if (!totals[key]) {
+      totals[key] = { name, team, goals: 0 };
+    }
+
+    totals[key].goals += Number(goals);
+  });
+
+  const sorted = Object.values(totals)
+    .sort((a, b) => b.goals - a.goals);
+
+  document.getElementById("scorersList").innerHTML =
+    sorted.map((p, i) => `
+      <tr>
+        <td>${i + 1}</td>
+        <td>${p.name}</td>
+        <td>${p.team}</td>
+        <td class="points">${p.goals}</td>
+      </tr>
+    `).join("");
+}
+
+renderScorers();
 
 </script>
 
