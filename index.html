@@ -218,6 +218,7 @@ footer{
   <button class="active" onclick="page('fixture',this)">Fikstür</button>
   <button onclick="page('table',this)">Puan Durumu</button>
   <button onclick="page('scorers',this)">Gol Krallığı</button>
+  <button onclick="page('assists',this)">Asist Krallığı</button>
   <button onclick="page('penalties',this)">Disiplin Cezaları</button>
   <button onclick="page('teams',this)">Takımlar</button>
 </nav>
@@ -266,7 +267,7 @@ footer{
 <div id="teamList"></div>
 </section>
   <section id="penalties" class="hidden">
-  <h2>🟥 Cezalı Oyuncular</h2>
+  <h2>🟥 Cezalılar</h2>
 <div id="penaltiesList">
   <table>
     <thead>
@@ -292,7 +293,11 @@ footer{
   <p style="color:#aebbd0">2026-2027 Tolga Kalender Sezonu</p>
   <div id="scorersList"></div>
 </section>
-
+<section id="assists" class="hidden">
+  <h2>🅰️ Asist Krallığı</h2>
+  <p style="color:#aebbd0">Vestel Süper Lig 2026-2027 Tolga Kalender Sezonu</p>
+  <div id="assistsList"></div>
+</section>
 </main>
 
 <footer>Vestel Süper Lig © 2026</footer>
@@ -634,7 +639,7 @@ function renderTeams(){
     <div class="card">
       <b>${i+1}. ${x}</b>
       <div style="color:#8998ad;margin-top:6px">
-        Papara Süper Lig
+        Vestel Süper Lig
       </div>
     </div>
 
@@ -725,6 +730,57 @@ renderTeams();
 }
 
 renderScorers();
+
+const assistResults = [
+  ["Del Piero", "Çine Madranspor", 0],
+  ["Gareth Bale", "Germencikspor", 0]
+];
+
+function addAssist(name, team, count = 1) {
+  const player = assistResults.find(
+    p => p[0].toLowerCase() === name.trim().toLowerCase()
+      && p[1] === team
+  );
+
+  if (player) {
+    player[2] += count;
+  } else {
+    assistResults.push([name.trim(), team, count]);
+  }
+
+  renderAssists();
+}
+
+function renderAssists() {
+  const totals = {};
+
+  assistResults.forEach(([name, team, assists]) => {
+    const key = name.trim().toLowerCase() + "|" + team;
+
+    if (!totals[key]) {
+      totals[key] = { name, team, assists: 0 };
+    }
+
+    totals[key].assists += Number(assists);
+  });
+
+  const sorted = Object.values(totals)
+    .sort((a, b) => b.assists - a.assists);
+
+  document.getElementById("assistsList").innerHTML =
+    sorted.map((p, i) => `
+      <div class="scorer-row">
+        <div class="scorer-rank">${i + 1}</div>
+        <div>
+          <div class="scorer-name">${p.name}</div>
+          <div class="scorer-team">${p.team}</div>
+        </div>
+        <div class="scorer-goals">${p.assists} asist</div>
+      </div>
+    `).join("");
+}
+
+renderAssists();
 
 </script>
 
