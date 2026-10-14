@@ -316,81 +316,98 @@ const teams = [
 
 /* İLK DEVRE */
 
-const firstRound=[
 
-[
-["Osmangazi Bld","Mardin 1969",0,3],
-["Artukluspor","Kütahyaspor",5,6],
-["Fenerbahçe","Germencikspor",1,2],
-["Güzide Gebzespor","Çine Madranspor",0,3],
-["Aydınspor 1966","Karpuzlu FK",2,4]
-],
-
-[
-["Fenerbahçe","Mardin 1969",3,4],
-["Osmangazi Bld","Karpuzlu FK",2,7],
-["Aydınspor 1966","Artukluspor",3,7],
-["Güzide Gebzespor","Kütahyaspor",0,3],
-["Germencikspor","Çine Madranspor",2,6]
-],
-
-[
-["Fenerbahçe","Çine Madranspor",5,7],
-["Mardin 1969","Karpuzlu FK",3,3],
-["Germencikspor","Kütahyaspor",4,5],
-["Osmangazi Bld","Artukluspor",0,3],
-["Güzide Gebzespor","Aydınspor 1966",0,3]
-],
-
-[
-["Çine Madranspor","Kütahyaspor",4,1],
-["Artukluspor","Mardin 1969",5,6],
-["Fenerbahçe","Karpuzlu FK",2,3],
-["Germencikspor","Aydınspor 1966",4,6],
-["Osmangazi Bld","Güzide Gebzespor",0,0]
-],
-
-[
-["Çine Madranspor","Aydınspor 1966",2,3],
-["Fenerbahçe","Kütahyaspor",6,4],
-["Karpuzlu FK","Artukluspor",2,3],
-["Mardin 1969","Güzide Gebzespor",3,0],
-["Osmangazi Bld","Germencikspor",0,3]
-],
-
-[
-["Fenerbahçe","Artukluspor",2,7],
-["Kütahyaspor","Aydınspor 1966",4,3],
-["Karpuzlu FK","Güzide Gebzespor",3,0],
-["Çine Madranspor","Osmangazi Bld",3,0],
-["Mardin 1969","Germencikspor",5,6]
-],
-
-[
-["Fenerbahçe","Aydınspor 1966",8,2],
-["Artukluspor","Güzide Gebzespor",3,0],
-["Kütahyaspor","Osmangazi Bld",3,0],
-["Karpuzlu FK","Germencikspor",7,4],
-["Çine Madranspor","Mardin 1969",1,3]
-],
-
-[
-["Fenerbahçe","Güzide Gebzespor",3,0],
-["Aydınspor 1966","Osmangazi Bld",3,0],
-["Artukluspor","Germencikspor",4,4],
-["Kütahyaspor","Mardin 1969",3,6],
-["Karpuzlu FK","Çine Madranspor",5,7]
-],
-
-[
-["Fenerbahçe","Osmangazi Bld",3,0],
-["Güzide Gebzespor","Germencikspor",0,3],
-["Aydınspor 1966","Mardin 1969",5,10],
-["Artukluspor","Çine Madranspor",6,3],
-["Kütahyaspor","Karpuzlu FK",7,2]
-]
-
+const firstRound = [
+  [
+    ["Erzurumspor","Mardin 1969"],
+    ["Kütahyaspor","45 Manisa FK"],
+    ["Çine Madranspor","Bursaspor"],
+    ["Artukluspor","Güzide Gebzespor"],
+    ["Germencikspor","Elazığspor"],
+    ["Aydınspor 1966","Karpuzlu FK"]
+  ],
+  [
+    ["Erzurumspor","45 Manisa FK"],
+    ["Mardin 1969","Bursaspor"],
+    ["Kütahyaspor","Güzide Gebzespor"],
+    ["Çine Madranspor","Elazığspor"],
+    ["Artukluspor","Karpuzlu FK"],
+    ["Germencikspor","Aydınspor 1966"]
+  ],
+  [
+    ["Erzurumspor","Bursaspor"],
+    ["45 Manisa FK","Güzide Gebzespor"],
+    ["Mardin 1969","Elazığspor"],
+    ["Kütahyaspor","Karpuzlu FK"],
+    ["Çine Madranspor","Aydınspor 1966"],
+    ["Artukluspor","Germencikspor"]
+  ],
+  [
+    ["Erzurumspor","Güzide Gebzespor"],
+    ["Bursaspor","Elazığspor"],
+    ["45 Manisa FK","Karpuzlu FK"],
+    ["Mardin 1969","Aydınspor 1966"],
+    ["Kütahyaspor","Germencikspor"],
+    ["Çine Madranspor","Artukluspor"]
+  ],
+  [
+    ["Erzurumspor","Elazığspor"],
+    ["Güzide Gebzespor","Karpuzlu FK"],
+    ["Bursaspor","Aydınspor 1966"],
+    ["45 Manisa FK","Germencikspor"],
+    ["Mardin 1969","Artukluspor"],
+    ["Kütahyaspor","Çine Madranspor"]
+  ],
+  [
+    ["Erzurumspor","Karpuzlu FK"],
+    ["Elazığspor","Aydınspor 1966"],
+    ["Güzide Gebzespor","Germencikspor"],
+    ["Bursaspor","Artukluspor"],
+    ["45 Manisa FK","Çine Madranspor"],
+    ["Mardin 1969","Kütahyaspor"]
+  ],
+  [
+    ["Erzurumspor","Aydınspor 1966"],
+    ["Karpuzlu FK","Germencikspor"],
+    ["Elazığspor","Artukluspor"],
+    ["Güzide Gebzespor","Çine Madranspor"],
+    ["Bursaspor","Kütahyaspor"],
+    ["45 Manisa FK","Mardin 1969"]
+  ],
+  [
+    ["Erzurumspor","Germencikspor"],
+    ["Aydınspor 1966","Artukluspor"],
+    ["Karpuzlu FK","Çine Madranspor"],
+    ["Elazığspor","Kütahyaspor"],
+    ["Güzide Gebzespor","Mardin 1969"],
+    ["Bursaspor","45 Manisa FK"]
+  ],
+  [
+    ["Erzurumspor","Artukluspor"],
+    ["Germencikspor","Çine Madranspor"],
+    ["Aydınspor 1966","Kütahyaspor"],
+    ["Karpuzlu FK","Mardin 1969"],
+    ["Elazığspor","45 Manisa FK"],
+    ["Güzide Gebzespor","Bursaspor"]
+  ],
+  [
+    ["Erzurumspor","Çine Madranspor"],
+    ["Artukluspor","Kütahyaspor"],
+    ["Germencikspor","Mardin 1969"],
+    ["Aydınspor 1966","45 Manisa FK"],
+    ["Karpuzlu FK","Bursaspor"],
+    ["Elazığspor","Güzide Gebzespor"]
+  ],
+  [
+    ["Erzurumspor","Kütahyaspor"],
+    ["Çine Madranspor","Mardin 1969"],
+    ["Artukluspor","45 Manisa FK"],
+    ["Germencikspor","Bursaspor"],
+    ["Aydınspor 1966","Güzide Gebzespor"],
+    ["Karpuzlu FK","Elazığspor"]
+  ]
 ];
+
 
 /* FİKSTÜRÜ OLUŞTUR */
 
