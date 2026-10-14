@@ -299,17 +299,19 @@ footer{
 
 <script>
 
-const teams=[
-"Mardin 1969",
-"Artukluspor",
-"Çine Madranspor",
-"Kütahyaspor",
-"Karpuzlu FK",
-"Germencikspor",
-"Fenerbahçe",
-"Aydınspor 1966",
-"Güzide Gebzespor",
-"Osmangazi Bld"
+const teams = [
+  "Erzurumspor",
+  "Mardin 1969",
+  "Kütahyaspor",
+  "45 Manisa FK",
+  "Çine Madranspor",
+  "Bursaspor",
+  "Artukluspor",
+  "Güzide Gebzespor",
+  "Germencikspor",
+  "Elazığspor",
+  "Aydınspor 1966",
+  "Karpuzlu FK"
 ];
 
 /* İLK DEVRE */
@@ -400,47 +402,28 @@ firstRound.forEach((week,index)=>{
       week:index+1,
       home:m[0],
       away:m[1],
-      hs:m[2],
-      as:m[3]
+      hs:null,
+      as:null
     });
   });
 });
 
-/* 10-18. HAFTALAR: EV/DEPLASMAN TERS */
+
+/* 12-22. HAFTALAR: EV/DEPLASMAN TERS */
 
 firstRound.forEach((week,index)=>{
-
   week.forEach(m=>{
-
-    let hs=null;
-    let as=null;
-
-    /* 10. hafta oynananlar */
-    if(index===0){
-      if(m[0]==="Osmangazi Bld" && m[1]==="Mardin 1969"){
-        hs=0; as=3;
-      }
-
-      if(m[0]==="Fenerbahçe" && m[1]==="Germencikspor"){
-        hs=2; as=8;
-      }
-
-      if(m[0]==="Güzide Gebzespor" && m[1]==="Çine Madranspor"){
-        hs=0; as=3;
-      }
-    }
-
     matches.push({
-      week:index+10,
+      week:index+12,
       home:m[1],
       away:m[0],
-      hs:as,
-      as:hs
+      hs:null,
+      as:null
     });
-
   });
-
 });
+
+
 
 /* PUAN DURUMU */
 
